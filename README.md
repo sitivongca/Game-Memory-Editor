@@ -1,1 +1,1 @@
-Uses Windows API and byte editting to alter game functions
+Uses Windows API and byte editing to alter game functions
