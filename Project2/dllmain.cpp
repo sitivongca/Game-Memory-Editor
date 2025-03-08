@@ -6,7 +6,7 @@
 #include <TlHelp32.h>
 #include "mem.h"
 
-DWORD APIENTRY imIn(HMODULE hModule)
+DWORD APIENTRY appEntry(HMODULE hModule)
 {
     // Create Console
     AllocConsole();
@@ -30,12 +30,10 @@ DWORD APIENTRY imIn(HMODULE hModule)
     uintptr_t x = modBase + 0x14ED088;
     uintptr_t y = modBase + 0x14ED08C;
     uintptr_t z = modBase + 0x14ED090;
-    // float currentLocX, currentLocY, currentLocZ; doesn't need to be here anymore
-    // float teleportX = 566, teleportY = -1510, teleportZ = 64;
-    // float hideX = 110, hideY = -1225, hideZ = 30; doesn't need to be here anymore
+
     //--------------------------------------------
 
-    // Hack loop
+    // Game Loop
     while (true)
     {
         // Screen clear

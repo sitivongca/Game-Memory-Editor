@@ -53,7 +53,6 @@ void inputF()
 {
     // needed for set input
     INPUT input;
-    // not sure
     memset(&input, 0, sizeof(input));
     input.type = INPUT_KEYBOARD;
 
@@ -103,7 +102,6 @@ int main()
                 clearScreen = false;
             }
 
-            // Current bug, inputF() not pressing f
             if (GetAsyncKeyState(VK_NUMPAD1) && 1)
             {
                 // save current location
@@ -120,31 +118,6 @@ int main()
             }
             if (GetAsyncKeyState(VK_NUMPAD2) && 1)
             {
-                /*
-                ammoOn = !ammoOn;
-                if (ammoOn)
-                {
-                    DWORD temp;
-                    VirtualProtectEx(procHandle, (BYTE*)(instructAddr), 7, PAGE_EXECUTE_READWRITE, &temp);
-                    WriteProcessMemory(procHandle, (BYTE*)(instructAddr), "\x90\x90\x90\x90\x90\x90\x90", 7, NULL);
-                    VirtualProtectEx(procHandle, (BYTE*)(instructAddr), 7, temp, &temp);
-                    clearScreen = true;
-                }
-                else
-                {
-                    DWORD temp;
-                    VirtualProtectEx(procHandle, (BYTE*)(instructAddr), 7, PAGE_EXECUTE_READWRITE, &temp);
-                    WriteProcessMemory(procHandle, (BYTE*)(instructAddr), (BYTE*)"\x89\x84\x8F\xFC\x05\x00\x00", 7, NULL);
-                    VirtualProtectEx(procHandle, (BYTE*)(instructAddr), 7, temp, &temp);
-                    clearScreen = true;
-                }
-                
-                
-                Why does this one not work?
-                It's only filling 4 bytes, not 7
-                Because sizeof(replaceAmmo) = 4 for some reason not 7
-                WriteProcessMemory(procHandle, (BYTE*)(instructAddr), replaceAmmo, sizeof(replaceAmmo), NULL);
-                */
                 ammoOn = !ammoOn;
                 if (ammoOn)
                 {
